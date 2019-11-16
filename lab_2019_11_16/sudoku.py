@@ -1,6 +1,10 @@
 import sys
 import time
 
+then = time.perf_counter()
+now = time.perf_counter()
+duration = now-then
+
 def wczytaj(nazwa):
   t = {}
   f=open(nazwa,"r")
@@ -50,8 +54,8 @@ def ruch(t,lp,n):
   global lg
   if n==len(lp):
     wypisz(t)
-    # time.sleep(0.5)
-    sys.exit()
+    time.sleep(0.5)
+    #sys.exit()
   else:
     w,k = lp[n]
     for x in mozliwe(t,w,k):
@@ -63,7 +67,7 @@ def ruch(t,lp,n):
 # end def
 
 
-d=wczytaj("dane2.txt")
+d=wczytaj("dane.txt")
 wypisz(d)
 lp = puste(d)
 print(lp)

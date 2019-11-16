@@ -3,7 +3,7 @@
 import socket
 import time
 
-# from pylab import *
+from pylab import *
 
 ################################################################################
     
@@ -25,14 +25,14 @@ if __name__ == '__main__':
   l = []  
   while True:
     t = get_meteo()
-    print(t)
+    # print(t)
     p1=t.find("<sx>")
     p2=t.find(" m/s")
     v=float(t[p1+4:p2])
     l.append(v)
     print(l)
-#    plot(l)
-#    savefig("wykres.png")
+    plot(l)
+    savefig("wykres.png")
     time.sleep(60)
   # end while
   
